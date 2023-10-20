@@ -20,7 +20,7 @@ class LotView(APIView):
     def get_object(self,id):
         try:
             queryset = Lot.objects.get(pk=id)
-            print(queryset.query)
+            print(queryset)
             serializer = LotSerializer(queryset)
             return Response(serializer.data)
         except Lot.DoesNotExist:
